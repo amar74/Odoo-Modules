@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<odoo>
+  <record id="employee_form_view" model="ir.ui.view">
+                <field name="name">Employee Details Wizard</field>
+                <field name="model">onboard.employee</field>
+		<field name="type">form</field>
+                <field name="arch" type="xml">
+            <form>
+		<sheet>
+                <notebook>
+		<page name="public" string="Employee Information" class="oe_heighlight">
+                <group>
+                <group string="">
+             
+                <field name="name" placeholder="Enter Name" style=" max-width: 1150px;  width: 170px;"/>
+                <field name="position" placeholder="Select Position" style="max-width: 1150px; width: 170px;" />
+	
+                <field name="department" placeholder="Select Department" style="max-width:1150px; width: 170px;" />
+                <field name="parent" placeholder="Select Manger" domain="[('department_id','=',department)]"  
+		       style="max-width: 1150px; width: 170px;"  />
+		</group>
+		<group name="public" string="">
+                <field name="doj" placeholder="D.O.J" style="max-width: 1150px; width: 170px;" />
+                <field name="salary" placeholder="salary" style="max-width: 1150px; width: 170px;" />
+                <field name="email"  placeholder="Personal Email ID" style="max-width: 1150px; width: 170px;" />
+		<field name="phone"  placeholder="Mobile No" style="max-width: 1150px; width: 170px" />
+		</group>
+		<div class="oe_edit_only">
+
+              	 <footer>
+		 <button name="submit" string="save" type="object" class="btn-primary" style="max-width:1150px; width: 150px;" />
+		 </footer> 
+
+		</div>
+                </group>        
+                </page>
+		</notebook>
+		</sheet>
+	    </form>	
+
+		</field>
+ </record>
+	<record model="ir.ui.view" id="employee_tree_view" >
+        <field name="name">Employee Details</field>
+        <field name="model">onboard.employee</field>
+        <field name="arch" type="xml"> 
+          
+	
+	 <tree>
+		 <field name="name"/>
+                <field name="position"/>
+                <field name="department" />
+                <field name="parent"/>
+                <field name="doj" />
+                <field name="salary"/>
+                <field name="email" />
+                <field name="phone" />
+
+	    </tree>
+	</field>
+	</record>
+
+	<record id="custom_action" model="ir.actions.act_window">
+        <field name="name">Employee Details</field>
+        <field name="res_model">onboard.employee</field>
+    
+	 <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create new item !
+            </p>
+        </field>
+    </record>
+    <!--   Create Top Menu  -->
+    <menuitem name="On Board" id="custom_top_menu" action="custom_action" sequence="6"/>
+	
+</odoo>

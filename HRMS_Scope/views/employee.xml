@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<odoo>
+   <!-- Stage1 -->
+   <!--   --> 
+	<record id="employee_form_view" model="ir.ui.view">
+         	<field name="name">Employee Details.form.view</field>
+        	<field name="model">employee_form</field>
+        	<field name="arch" type="xml">
+            <form>
+	      <sheet>
+		<notebook>
+		<page name="public" string="Employee Information">
+		<group>
+		<group string="Contact Information">
+                <field name="name" placeholder="Enter Name" style=" max-width: 1150px;  width: 170px;"/>
+                <field name="email" placeholder="Enter Email I'D"  style="max-width: 1150px; width: 170px;" />
+                <field name="position" placeholder="Enter Position" style="max-width: 1150px; width: 170px;" />
+		</group>
+		<group string="Position">
+		<field name="department" placeholder="Enter Department" style="max-width: 1150px; width: 170px;" />
+		<field name="reporting_manager" placeholder="Enter Reporting Manager" style="max-width: 1150px; width:170px;" />
+		<field name="date_of_join"  placeholder="D.O.J" style="max-width: 1150px; width: 170px;" />
+		<field name="salary" placeholder="salary" style="max-width: 1150px; width: 170px;" />
+                <div class="oe_button_box" name="Hired">
+                
+	         <button name="hired" string="Hired" type="object" class="oe_highlight">
+            			
+                         </button>
+
+                </div>
+		</group>
+		</group>	
+		</page>
+		<page name="public" string="Non-Disclosure Agreement">
+		<group>
+		<group name="upload_document" string="Non-Disclosure Agreement">
+		  <field name="name1" placeholder="Enter the name" style="max-width:1150px; width: 170px;" />
+		  <field name="DOJ" placeholder="DOJ" style="max-width:1150px; width: 170px;" />
+		  <field name="degination" placeholder="Degination" style="max-width:1150px; width:170px;" />
+                          <label for="street" string="Address"/>
+                            <div class="o_address_format">
+		                   <field name="street1" placeholder="Street..." class="o_address_street" style="max-width:1150px; width:170px;"/>
+                               <field name="city1" placeholder="City" class="o_address_city" style="max-width:1150px; width:170px;"/>
+                                <field name="state_id1" class="o_address_state" placeholder="State" style="max-width:1150px; width:170px;" />
+                                <field name="zip_id1" placeholder="ZIP" class="o_address_zip" style="max-width:1150px; width:170px;"/>
+                                <field name="country_id1" placeholder="Country" class="o_address_country" style="max-width:1150px; width:170px;"/>
+                            </div>
+        	  <field name="Non_disclosure_agreement" widget="document" class="oe_avatar" />
+		 <div class="oe_button_box" name="Submit">
+		      <button name="hired" String="Submit" type="object" class="oe_highlight">
+		      </button>
+		 </div>
+	       </group>
+		</group>
+		</page>
+     <!-- Employee agreement -->
+		<page name="public" string="Employee Agreement"> 
+		<group>	     
+	       <group name="upload_doc" string="Employee Agreement">
+
+                  <field name="emname" placeholder="Enter the name" style="max-width:1150px; width: 170px;" />
+                  <field name="emDOJ" placeholder="DOJ" style="max-width:1150px; width: 170px;" />
+                  <field name="emdegination" placeholder="Degination" style="max-width:1150px; width:170px;" />
+                  <field name="ctc" placeholder="CTC" style="max-width:1150; width:170px;" />
+	<!--	  <field name="emAddress" placeholder="Address"  style="max-width:1150px; width:170px;" /> -->
+              		<label for="street" string="Address"/>
+                            <div class="o_address_format">
+                               <field name="street" placeholder="Street..." class="o_address_street" style="max-width:1150px; width:170px;"/>
+                               <field name="city" placeholder="City" class="o_address_city" style="max-width:1150px; width:170px;"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" style="max-width:1150px; width:170px;" />
+                                <field name="zip_id" placeholder="ZIP" class="o_address_zip" style="max-width:1150px; width:170px;"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" style="max-width:1150px; width:170px;"/>
+                            </div>
+                         <field name="Employee_agreement" widget="document" class="oe_avatar" />
+               
+                 <div class="oe_button_box" name="Submit">
+                      <button name="hired" string="Submit" type="object" class="oe_highlight">
+                      </button>
+		 </div>
+              </group>
+	      </group>
+		</page>
+		<!-- Other Documents -->
+		<page name="public" string ="Document Details">
+		<group>
+		<group name="other_document" string="Document Details">
+                   <field name="anti_Sexual" widget="document" class="oe_avatar" />
+		   <field name="Ethics_policy" widget="document" class="oe_avatar" />
+		   <field name="ESOPs" widget="document" class="oe_avatar" />
+		   <field name="PF_form" widget="document" class="oe_avatar" />
+	  	   <field name="Gratuity_form" widget="document" class="oe_avatar" />
+		 <div class="oe_left">
+		  <button name="hired" string="Submit" type="object" class="oe_highlight">
+		  </button>
+		 </div>
+		</group>
+		</group>
+		</page>
+		<!-- Stage 3rd -->
+		<page name="public" string="Machines Details">
+		<group>
+		<group name="Other_Deatils" string="Tracking Details">
+		<field name="mac" type="checkbox" /> <!-- attrs="{'invisible':[('mac','=',True)]}" /> -->
+		<field name="Laptop" type="checkbox"/>  <!-- attrs="{'invisible': [('Laptop','=',True)]}"/> -->
+		<field name="Desktop" type="checkbox" /> <!-- attrs="{'invisible': [('Desktop','=',True)]}"/> -->
+		<field name="Thinkpad" type="checkbox" /> <!-- attrs="{'invisible': [('Thinkpad','=',True)]}"/> -->
+		<field name="sim" type="checkbox"/> <!-- attrs="{'invisible': [('sim','=',True)]}"/>	-->
+		
+		<div class="oe_left">
+		  <button name="hired" string="Submit" type="object" class="oe_highlight">
+		  </button>
+		</div>
+		</group>
+		</group>
+		</page>
+		<!-- Stage 4 -->
+	   <!-- Request for parking / seat allocation -->
+		<page name="public" string="Parking Details" >
+		<group>
+		<group name="parking_details" string="Parking details">
+		<field name="bussiness" type="checkbox" />
+		<field name="parking" type="checkbox" />
+	
+		<div class="oe_left" >
+		  <button name="hired" string="Submit" type="object" class="oe_highlight">
+		  	</button>
+		 </div>
+		</group>
+		</group>
+		</page>
+		</notebook>
+		</sheet>			   
+            </form>
+        </field>
+    </record>
+     <record model="ir.ui.view" id="employee_tree_view" >
+        <field name="name">Employee Details</field>
+        <field name="model">employee_form</field>
+   	<field name="arch" type="xml">
+           <tree>
+              	<field name="name"/>
+                <field name="email"/>
+                <field name="position" />
+		<field name="department"/>
+		<field name="reporting_manager" />
+		<field name="date_of_join"/>
+		<field name="salary" />
+	<!--	<field name="name1" />
+		<field name="DOJ" />
+		<field name="degination" />
+		<field name="street1"/>
+		<field name="city1" />
+		<field name="state_id1" />
+		<field name="zip_id1" />
+		<field name="country_id1" />
+		<field name="Non_disclosure_agreement"/>
+		<field name="emname" />
+		<field name="emDOJ" />
+		<field name="emdegination" />
+		<field name="ctc" />
+		<field name="Employee_agreement" />
+		<field name="street" />
+		<field name="city" />
+		<field name="state_id" />
+		<field name="zip_id" />
+		<field name="country_id" />
+		<field name="anti_Sexual" />
+		<field name="Ethics_policy" />
+		<field name="ESOPs" />
+		<field name="PF_form" />
+		<field name="Gratuity_form" />
+		<field name="mac" />
+		<field name="Laptop" />
+		<field name="Desktop" />
+		<field name="Thinkpad" />
+		<field name="sim" />
+		<field name="bussiness" />
+		<field name="parking" /> -->
+            </tree> 
+        </field>
+    </record> 
+	<record id="custom_action" model="ir.actions.act_window">
+        <field name="name">Employee Details</field>
+        <field name="res_model">employee_form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create new item !
+            </p>
+        </field>
+    </record>
+    <!--   Create Top Menu  -->
+    <menuitem name="employee_form" id="custom_top_menu" action="custom_action" sequence="6"/>
+
+
+</odoo>
+
