@@ -1,0 +1,6 @@
+from odoo import fields, models, api
+class Employee(models.Model):
+	_inherit = 'hr.employee'
+ 	abc = fields.Char('ABC')
+	cde = fields.Char('CDE')
+

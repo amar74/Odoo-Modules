@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+   <!-- Header Part -->
+    <record id="contact_tree_view" model="ir.ui.view" >
+	<field name="name">contact_form.tree.view</field>
+	<field name="model">contact_form</field>
+	<field name="arch" type="xml">
+           <tree string="Contact Information">
+                <field name="name"/>
+                <field name="lastName"/>
+                <field name="age"/>
+		<field name="email"/>
+		<field name="phone" />
+		<field name="image" />
+            </tree>
+        </field>
+    </record>
+    <record id="customer_form_view" model="ir.ui.view">
+        <field name="name">contact_form.form.view</field>
+        <field name="model">contact_form</field>
+        <field name="arch" type="xml">
+            <form>
+        <header> 
+	<div class="oe_left">
+            <button string="won" type="object" name="won" class="oe_highlight" /> <!--  attrs="{'invisible': [('state', '!=', 'won')]}"/> -->
+        </div>
+	<div class="oe_right"> 
+	    <button string="new" type="object" name="ne1" class="oe_highlight"/> <!-- attrs="{'invisible': [('state','!=','new')]}"/> -->
+            <button string="position" type="object" class="oe_highlight" name="position" style="width:50px"/> <!--  attrs="{'invisible': [('state','!=','position')]}"/> -->
+            <button string="qualified" type="object" class="oe_highlight" name="qualified" style="width:50px"/> <!-- attrs="{'invisible': [('state','!=','qualified')]}"/> -->
+           <!--  <field name="state" widget="statusbar"/> -->
+            <button string="won" type="object" name="won" class="oe_highlight" style="width:50px"/>
+	</div>
+	</header>
+             <group>
+                <field name="name" placeholder="Enter First Name" style=" max-width: 1150px;  width: 500px"/>
+                <field name="lastName" placeholder="Enter Last Name" style=" max-width: 1150px;  width: 500px" />
+                <field name="age"   style="max-width: 1150px;  width: 500px" />
+                <field name="email" placeholder="Enter Email I'D"  style="max-width: 1150px; width: 500px" />
+		<field name="phone" placeholder="Enter Phone no." style="max-width: 1150px; width: 500px" />
+	<!--	<field name="image" string="Image" placeholder="Image" style="max-width: 1150; width:500px;" />-->
+	      <field name="image"  widget="image" class="oe_avatar" />
+	     </group>
+            </form>
+        </field>
+    </record>
+
+    <!--   Define custom action -->
+
+    <record id="custom_action" model="ir.actions.act_window">
+        <field name="name">Child Menu</field>
+        <field name="res_model">contact_form</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create new item !
+            </p>
+        </field>
+    </record>
+    <!--   Create Top Menu  -->
+    <menuitem name="Contact_form" id="custom_top_menu" action="custom_action" sequence="6"/>
+
+</odoo>

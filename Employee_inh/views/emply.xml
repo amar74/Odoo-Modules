@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+  <record id="employee_form_view" model="ir.ui.view">
+                <field name="name">Employee Details.form.view</field>
+                <field name="model">hr.employee</field>
+                <field name="inherit_id" ref="hr.view_employee_form"/>
+                <field name="arch" type="xml">
+         <xpath expr="//page[@name='hr_settings']" position='after'>
+                <page string='Security Information'>
+		<form>
+		  <header>
+			<div class="oe_left">
+				<button string="start" type="object" name="start" class="or_highlight" />
+			</div>
+		  </header>
+           <sheet>
+	       <notebook>
+		     <page name="public" string="Security Information">
+		<group>
+		<group string="Security Information">
+             
+                <field name="Emname" placeholder="Enter name" style=" max-width: 1150px;  width: 170px;"/>
+                <field name="Emphone" placeholder="Enter Phone no."  style="max-width: 1150px; width: 170px;" />
+                <field name="Ememail" placeholder="Enter Email I'D" style="max-width: 1150px; width: 170px;" />
+		<field name="Emsalary" placeholder="Enter Monthaly Income" style="max-width: 1150; width: 170;" />
+		<field name="Emdate_of_joining" placeholder="Enter D.O.J" style="max-width: 1150; width: 170;" />
+		<field name="Emdocument" style="max-width: 1150; width: 170;" />
+		</group>	
+		</group>
+		</page>
+	      </noteboook> 
+	    </sheet>
+	   </form>    
+		</page>
+         </xpath>  
+       </field>
+  </record>
+
+
+
+</odoo>

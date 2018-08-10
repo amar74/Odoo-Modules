@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<odoo>
+<record id="view_partner" model="ir.ui.view">
+        <field name="name">employee</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+	 <xpath expr="//page[@name='hr_settings']" position='after'>
+	     	<page string='Security Information'>
+		<form>
+                  <header>
+                        <div class="oe_left">
+                                <button string="start" type="object" name="start" class="or_highlight" />
+                        </div>
+                  </header>
+           <sheet>
+                     <page name="public" string="Security Information">
+                <group>
+                <group string="Security Information">
+
+                <field name="Emname" placeholder="Enter name" style=" max-width: 1150px;  width: 170px;"/>
+                <field name="Emphone" placeholder="Enter Phone no."  style="max-width: 1150px; width: 170px;" />
+                <field name="Ememail" placeholder="Enter Email I'D" style="max-width: 1150px; width: 170px;" />
+                <field name="Emsalary" placeholder="Enter Monthaly Income" style="max-width: 1150; width: 170;" />
+                <field name="DOJ" placeholder="Enter D.O.J" style="max-width: 1150; width: 170;" />
+                <field name="Emdocument" style="max-width: 1150; width: 170;" />
+	        <field name="crmamar" context="{'show_address': 1}" options='{"always_reload": True}'/> 
+		<field name="date" /> 
+		
+             <!--   <button name="submit" string="Submit" class="oe_highlight" /> -->
+		</group>
+		</group>
+		</page>
+		<page name="public" string="Related Information" >
+		<group>
+               <field name="date_deadline" />
+		<div class="oe_"/> 
+		<field name="planned" />
+               <field name="planned_revenue" />
+	        <field name="prob" />
+		<field name="probability" />
+		</group>
+                </page>
+           </sheet>
+           </form>
+         	 
+               </page>
+        </xpath>
+       </field>
+</record>
+
+</odoo>
